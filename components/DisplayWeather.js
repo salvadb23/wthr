@@ -15,7 +15,8 @@ const DisplayWeather = (props) => {
     const { description } = props.data.weather[0]
     return (
       <View style={styles.container}>
-        <Text style={styles.temp}>{temp}˚</Text>
+        <Text style={styles.icon}>˚</Text>
+        <Text style={styles.temp}>{temp}</Text>
         <Text>{description}</Text>
       </View>
     )
@@ -24,11 +25,16 @@ const DisplayWeather = (props) => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: 'center'
+      justifyContent: 'center',
+      position: 'relative',
     },
     temp: {
       fontSize: 40,
       fontWeight: 'bold'
+    },
+    icon: {
+      textAlign: 'right',
+      position: 'absolute'
     }
   })
 
